@@ -1,0 +1,178 @@
+.table-container {
+  min-height: 383px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+thead button {
+  border: 0;
+  border-radius: none;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: inherit;
+  padding: 0.5em;
+  margin-bottom: 1px;
+  background: transparent;
+  color: rgba(0, 0, 0, 80%);
+}
+
+thead button.ascending::after {
+  content: '👇';
+  display: inline-block;
+  margin-left: 1em;
+}
+
+thead button.descending::after {
+  content: '☝️';
+  display: inline-block;
+  margin-left: 1em;
+}
+
+tbody td {
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
+  color: rgba(0, 0, 0, 70%);
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background-color: #eee;
+}
+
+.country-name {
+  color: rgba(0, 0, 0, 80%);
+  font-weight: 600;
+}
+
+.no-data-text {
+  color: rgba(0, 0, 0, 60%);
+  font-size: 24px;
+  font-weight: 600;
+  left: 140%;
+  position: relative;
+  margin-top: 140px;
+}
+
+.table-delete__icon {
+  color: red;
+  font-size: 18px !important;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.table-edit__icon {
+  font-size: 18px !important;
+  cursor: pointer;
+}
+
+.page {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.delete-btn {
+  border-radius: 25px;
+  padding: 8px 12px;
+  background: rgb(221, 96, 96);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all ease-out;
+}
+
+.delete-btn:hover {
+  background: rgb(175, 5, 5);
+}
+
+.delete-btn:active {
+  transform: translateY(2px);
+}
+
+@media only screen and (max-width: 800px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  .page {
+    flex-direction: column-reverse;
+  }
+
+  .delete-btn {
+    margin-bottom: 20px;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  tbody td {
+    font-size: 16px;
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 50%);
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(1):before {
+    content: 'Country';
+  }
+  td:nth-of-type(2):before {
+    content: 'Total Cases';
+  }
+  td:nth-of-type(3):before {
+    content: 'Active Cases';
+  }
+  td:nth-of-type(4):before {
+    content: 'Total Deaths';
+  }
+  td:nth-of-type(5):before {
+    content: 'Recovered';
+  }
+
+  .no-data-text {
+    color: rgba(0, 0, 0, 60%);
+    font-size: 24px;
+    font-weight: 600;
+    left: 30%;
+    position: relative;
+    margin-top: 20px;
+  }
+}
