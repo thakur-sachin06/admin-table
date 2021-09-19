@@ -48,12 +48,12 @@ describe('<Header />', () => {
         value: 'Sachin',
       },
     });
-    await new Promise((r) => setTimeout(r, 1000));
+    await new Promise((r) => setTimeout(r, 2000));
     fireEvent.change(searchInput, {
       target: {
         value: '',
       },
     });
-    await new Promise((r) => setTimeout(r, 1000));
+    await new Promise((r) => setTimeout(r, 2000));
   });
 });

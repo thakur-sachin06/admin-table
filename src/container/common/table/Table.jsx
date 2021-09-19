@@ -100,7 +100,7 @@ function Table({ tableHeaders }) {
             setIsModalOpen(true);
             setSlectedUser(id);
           }}
-          data-testId='delete-user'
+          data-testid='delete-user'
         >
           <DeleteOutline className='table-delete__icon' />
         </div>
@@ -109,7 +109,7 @@ function Table({ tableHeaders }) {
           onClick={() => {
             handleEditUser(id, name, email, role);
           }}
-          data-testId='edit-user'
+          data-testid='edit-user'
         >
           <Edit className='table-edit__icon' />
         </div>
@@ -230,7 +230,7 @@ function Table({ tableHeaders }) {
           title={modalData.title}
           body={modalData.body}
           onConfirm={() => handleDeleteUser(false)}
-          data-testId='delete-modal'
+          data-testid='delete-modal'
         />
       )}
       {isModalOpen && isEdit && (
@@ -239,7 +239,7 @@ function Table({ tableHeaders }) {
           userToEditData={userToEditData}
           setUserToEditData={setUserToEditData}
           onChange={onChange}
-          data-testId='edit-modal'
+          data-testid='edit-modal'
         />
       )}
     </>
