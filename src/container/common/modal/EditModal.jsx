@@ -38,6 +38,7 @@ const EditModal = (props) => {
                 setName(e.target.value);
               }}
               autoFocus
+              data-testid='name-input'
             />
           </div>
         </div>
@@ -50,6 +51,7 @@ const EditModal = (props) => {
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
+              data-testid='email-input'
             />
           </div>
         </div>
@@ -62,6 +64,7 @@ const EditModal = (props) => {
               onChange={(e) => {
                 setRole(e.target.value);
               }}
+              data-testid='role-input'
             />
           </div>
         </div>
@@ -69,12 +72,14 @@ const EditModal = (props) => {
           <button
             className='modal-button cancel-button'
             onClick={handleOnChange}
+            data-testid='confirm-button'
           >
             Yes
           </button>
           <button
             className='modal-button no-button'
             onClick={onCancel}
+            data-testid='cancel-button'
           >
             No
           </button>

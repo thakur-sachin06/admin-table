@@ -17,7 +17,6 @@ let modalData = {
 };
 
 function Table({ tableHeaders }) {
-  let users = [];
   const { filteredData, setFiltered, userData } =
     useContext(UserContext);
 
@@ -101,6 +100,7 @@ function Table({ tableHeaders }) {
             setIsModalOpen(true);
             setSlectedUser(id);
           }}
+          data-testId='delete-user'
         >
           <DeleteOutline className='table-delete__icon' />
         </div>
@@ -109,6 +109,7 @@ function Table({ tableHeaders }) {
           onClick={() => {
             handleEditUser(id, name, email, role);
           }}
+          data-testId='edit-user'
         >
           <Edit className='table-edit__icon' />
         </div>
@@ -153,7 +154,7 @@ function Table({ tableHeaders }) {
             <tr>
               {tableHeaders.map((header) => {
                 return (
-                  <th>
+                  <th key={header.label}>
                     <button type='button'>
                       {header.label}
                     </button>
@@ -174,6 +175,7 @@ function Table({ tableHeaders }) {
                         onChange={(e) =>
                           toggleSelectedUsers(data.id)
                         }
+                        data-testid='checkbox'
                         style={{
                           cursor: 'pointer',
                           height: '18px ',
@@ -182,9 +184,9 @@ function Table({ tableHeaders }) {
                       />
                     }
                   </td>
-                  <td>{data.name}</td>
-                  <td>{data.email}</td>
-                  <td>{data.role}</td>
+                  <td data-testid='name'>{data.name}</td>
+                  <td data-testid='email'>{data.email}</td>
+                  <td data-testid='role'>{data.role}</td>
                   <td>
                     {showActions(
                       data.id,
@@ -211,6 +213,7 @@ function Table({ tableHeaders }) {
               : 'delete-btn__disabled'
           } `}
           onClick={() => handleDeleteUser(true)}
+          data-testid='delete-selected'
         >
           Delete Selected
         </button>
@@ -227,6 +230,7 @@ function Table({ tableHeaders }) {
           title={modalData.title}
           body={modalData.body}
           onConfirm={() => handleDeleteUser(false)}
+          data-testId='delete-modal'
         />
       )}
       {isModalOpen && isEdit && (
@@ -235,6 +239,7 @@ function Table({ tableHeaders }) {
           userToEditData={userToEditData}
           setUserToEditData={setUserToEditData}
           onChange={onChange}
+          data-testId='edit-modal'
         />
       )}
     </>

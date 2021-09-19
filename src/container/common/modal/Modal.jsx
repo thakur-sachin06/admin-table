@@ -12,12 +12,14 @@ const Modal = (props) => {
           <button
             className='modal-button delete-button'
             onClick={onConfirm}
+            data-testid='confirm-button'
           >
             Yes
           </button>
           <button
             className='modal-button cancel-button'
             onClick={onCancel}
+            data-testid='cancel-button'
           >
             No
           </button>

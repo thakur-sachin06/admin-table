@@ -53,6 +53,7 @@ function Pagination({ filterData, userData }) {
             setActiveItem(elt);
             filterData(elt);
           }}
+          key={elt}
         >
           {elt}
         </button>
