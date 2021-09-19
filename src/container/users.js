@@ -4,8 +4,8 @@ import React, {
   useContext,
 } from 'react';
 import './style/styles.css';
-import Header from './header/Header';
-import Table from './content/table/Table';
+import Header from './common/header';
+import Table from './common/table';
 import { UserContext } from './context/UserContext';
 
 let debounceTimer;
@@ -17,6 +17,11 @@ const tableHeaders = [
   { key: 'role', label: 'Role' },
   { key: 'actions', label: 'Actions' },
 ];
+
+const modalData = {
+  title: 'Delete User',
+  body: 'Are you sure you want to delete this user ?',
+};
 
 function Homepage() {
   const {
@@ -109,7 +114,10 @@ function Homepage() {
       {isLoading ? (
         <div class='loader'></div>
       ) : (
-        <Table tableHeaders={tableHeaders} />
+        <Table
+          tableHeaders={tableHeaders}
+          modalData={modalData}
+        />
       )}
     </>
   );

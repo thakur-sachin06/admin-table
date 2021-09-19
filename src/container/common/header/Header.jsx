@@ -12,7 +12,7 @@ function Header({
       <input
         type='search'
         className='search'
-        placeholder='Search for a user...'
+        placeholder='Search user...'
         value={searchText}
         onChange={(e) => {
           setSearchText(e.target.value);

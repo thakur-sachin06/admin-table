@@ -1,12 +1,6 @@
-import React, {
-  useState,
-  useEffect,
-  useContext,
-} from 'react';
+import React from 'react';
 import './App.css';
-import Homepage from '../src/container';
-
-let debounceTimer;
+import Homepage from '../src/container/users';
 
 function App() {
   return (
