@@ -11,25 +11,16 @@ import { UserContext } from './context/UserContext';
 let debounceTimer;
 
 const tableHeaders = [
-  { key: 'checkbox', label: 'Checkbox' },
+  { key: 'select', label: 'Select' },
   { key: 'name', label: 'Name' },
   { key: 'email', label: 'Email' },
   { key: 'role', label: 'Role' },
   { key: 'actions', label: 'Actions' },
 ];
 
-const modalData = {
-  title: 'Delete User',
-  body: 'Are you sure you want to delete this user ?',
-};
-
 function Homepage() {
-  const {
-    userData,
-    updateUserData,
-    setFiltered,
-    setCardData,
-  } = useContext(UserContext);
+  const { userData, updateUserData, setFiltered } =
+    useContext(UserContext);
 
   const [searchText, setSearchText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -64,24 +55,6 @@ function Homepage() {
     debounceTimer = setTimeout(searchData, 1000, text);
   }
 
-  function sortData(data) {
-    const sortedData = data.sort((a, b) => {
-      const elt1 =
-        a && a.cases && a.cases.new
-          ? a.cases.new.replace('+', '')
-          : '0';
-      const elt2 =
-        b && b.cases && b.cases.new
-          ? b.cases.new.replace('+', '')
-          : '0';
-      return Number(elt1) < Number(elt2) ? 1 : -1;
-    });
-    console.log(sortedData);
-
-    setFiltered(sortedData);
-    updateUserData(sortedData);
-  }
-
   async function fetchUserData() {
     setIsLoading(true);
     try {
@@ -114,10 +87,7 @@ function Homepage() {
       {isLoading ? (
         <div class='loader'></div>
       ) : (
-        <Table
-          tableHeaders={tableHeaders}
-          modalData={modalData}
-        />
+        <Table tableHeaders={tableHeaders} />
       )}
     </>
   );

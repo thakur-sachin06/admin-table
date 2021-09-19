@@ -10,16 +10,16 @@ const Modal = (props) => {
         <div className='modal-body'>{body}</div>
         <div className='modal-footer'>
           <button
-            className='modal-button cancel-button'
-            onClick={onCancel}
-          >
-            No
-          </button>
-          <button
             className='modal-button delete-button'
             onClick={onConfirm}
           >
             Yes
+          </button>
+          <button
+            className='modal-button cancel-button'
+            onClick={onCancel}
+          >
+            No
           </button>
         </div>
       </div>
