@@ -36,5 +36,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "src/container/context",
+      "src/App.js",
+      "src/index.js",
+      "src/*/*/index.js"
+    ]
   }
 }
