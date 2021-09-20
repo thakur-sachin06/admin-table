@@ -1,6 +1,7 @@
-# Covid Tracker Web App
+# Admin page Web App
 
-An responsive application to show Covid 19 data of all countries, built with React, Context Api, JavaScript, and CSS.
+A responsive application to show users data, built with React, Context Api, JavaScript, and CSS.
+Admin can search, delete and edit the user.
 
 # Installation and Setup Instructions
 
