@@ -43,6 +43,7 @@ function Pagination({ filterData, userData }) {
           filterData(activeItem - 1);
           setActiveItem(activeItem - 1);
         }}
+        data-testid='navigate-prev'
       />
       {paginatedData.map((elt) => (
         <button
@@ -66,6 +67,7 @@ function Pagination({ filterData, userData }) {
           filterData(activeItem + 1);
           setActiveItem(activeItem + 1);
         }}
+        data-testid='navigate-next'
       />
     </div>
   );
